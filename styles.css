@@ -1,0 +1,24 @@
+h2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 70px;
+  margin: 0 auto;
+  text-align: center;
+  color: #D8A08E;
+}
+
+.maincontainer {
+  width: 50%;
+  margin-left: 320px;
+  border: solid #D8A08E;
+  background-color: #EAEAEA;
+}
+
+.input-field {
+  width: 522px;
+  margin-left: 50px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #D8A08E;
+}

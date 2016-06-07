@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List Gabriel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="maincontainer">
+
+        <h2>TODOs</h2>
+
+    <div class="inputfields">
+      <aside class="create-task">
+          <form class="">
+            <input class="input-field" type="text" name="title" value=""  placeholder="What To-Do?" />
+            <ul></ul>
+            <!-- <textarea class="input-field" name="content" rows="8" cols="40" placeholder="Returned thing to do"> </textarea> -->
+            <!-- <input type="checkbox" name="done" value=""> -->
+          </form>
+        </aside>
+    </div>
+
+    <footer>
+      <div class="tasksremaining">
+        <h5>1 left</h5>
+      </div>
+      <div class="actions">
+        <button type="button" name="All">All</button>
+        <button type="button" name="Active">Active</button>
+        <button type="button" name="Complete">Complete</button>
+      </div>
+      <div class="clearbutton">
+        <button type="button" value="Clear Completed">Clear Completed</button>
+      </div>
+
+
+    </footer>
+
+
+    </div>
+
+
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/underscore/underscore.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
