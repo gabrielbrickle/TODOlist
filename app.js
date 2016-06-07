@@ -57,9 +57,14 @@ var gabeToDo = {
     //   $(ourClassToShow).siblings().addClass('hidden')
     // }
     // }),
-    $('.clearbutton').on('click',function(){
+    $('.clear').on('click',function(){
       event.preventDefault();
-      $('ul').addClass('hidden');
+      $('ul').toggle('li');
+    });
+
+    $('.allbutton').on('click',function(){
+      event.preventDefault();
+      $('ul').toggle('hidden');
     });
 
     },
