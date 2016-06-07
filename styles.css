@@ -1,9 +1,16 @@
 h2 {
-  font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: lighter;
   font-size: 70px;
   margin: 0 auto;
   text-align: center;
   color: #D8A08E;
+  margin-top: 10px;
+}
+
+html {
+font-family: 'Josefin Sans', sans-serif;
+font-weight: lighter;
 }
 
 .maincontainer {
@@ -17,8 +24,17 @@ h2 {
   width: 522px;
   margin-left: 50px;
   text-align: center;
+  font-size: 25px;
 }
 a {
   text-decoration: none;
   color: #D8A08E;
+}
+
+a:hover {
+  color: #4668CE;
+}
+
+li {
+  font-size: 20px;
 }
