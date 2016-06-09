@@ -12,9 +12,6 @@ var gabeToDo = {
   styling: function() {
     gabeToDo.getToDo();
   },//end styling
-
-
-
   events: function() {
 //Add New ToDo Item
   $('form').submit(function () {
@@ -39,6 +36,24 @@ var gabeToDo = {
     $(this).parent().remove();
     gabeToDo.deleteToDo(toDoId);
   });
+  ////completed button
+  // $('.completebutton').on('click', function(){
+  //   event.preventDefault();
+  //   $.each($('li'),function(idx,element) { $(element).has('a').css("display",'none') });
+  // });
+
+  // $('a').on('click', function(){
+  //   event.preventDefault();
+  //   console.log("a tag!");
+  // })
+  //
+  $('.clearbutton').on('click', function(){
+    event.preventDefault();
+    var deleteAll = $('li').siblings().data('id');
+    $('li').remove();
+    gabeToDo.deleteToDo(deleteAll);
+  })
+
   ////editing a post
   var newLiVal;
   $("ul").on('dblclick', 'li', function () {
@@ -46,50 +61,40 @@ var gabeToDo = {
     $(this).text("");
     $("<input type='text' data-id='"+ $(this).data('id') +"'>").appendTo(this).focus();
   });
-
-
   $("ul").on('focusout', 'li > input', function () {
     var $this = $(this);
     var newLiVal = $this.val()
     $this.text($this.val());
     $(this).parent().text($this.val()).append('<a href=""> ✓</a>');
-    // console.log($(this).data('id'))
     $this.remove();
     gabeToDo.editToDo({
       todo: newLiVal,
       _id: $this.data('id')
     })
-
-
   });
-
-
   ///Clicking on buttons
    $('button').on('click',function(event) {
     event.preventDefault();
     console.log(this);
   });
-    /////clicking on active button$("#toolbar li").each(function(){
-    $('.clear').on('click',function(){
-      event.preventDefault();
-      $('ul').toggle('li');
-    });
-    // ///counting list items for tasks remaining
-
-    // var listItems = $("li").children();
-
+    /////clicking on active button
+    // $('.clear').on('click',function(){
+    //   event.preventDefault();
+    //   $('ul').toggle('li');
+    // });
     $('.activebutton').on('click', function(){
       event.preventDefault();
       $.each($('li'),function(idx,element) { $(element).has('a').css("display",'block') });
     });
-
     $('.allbutton').on('click',function(){
       event.preventDefault();
-      $('ul').toggle('hidden');
-    });
+      // $('ul').toggle('hidden');
+      $.each($('li'),function(idx,element) { $(element).has('a').css("display",'block') });
 
+    });
     },
 
+////////AJAX ---CRUD
 
   createToDoPost: function(thingToDo) {
     $.ajax({
@@ -157,13 +162,7 @@ var gabeToDo = {
           console.error("OH CRAP", err);
         }
       })
-
-
   }, ///ending
-
-
-
-
 //
 //   templification: function(template) {
 //     return _.template(template);
@@ -176,7 +175,4 @@ var gabeToDo = {
 //
 //
 //
-
-
-
 };//end variable gabeToDo
